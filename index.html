@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISECAB | Soluciones Profesionales de Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --royal-blue: #002366; /* Azul Rey Serio */
+            --slate-gray: #334155;
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--slate-gray);
+            overflow-x: hidden;
+        }
+
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px -15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            padding: 4rem 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-image-container {
+            background-color: #f1f5f9;
+            border-radius: 2px;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease;
+        }
+
+        .slide:hover .product-image-container {
+            transform: scale(1.02);
+        }
+
+        .dot {
+            height: 4px;
+            width: 24px;
+            background-color: #e2e8f0;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .dot-active {
+            background-color: var(--royal-blue);
+            width: 48px;
+        }
+
+        .btn-nav {
+            color: var(--royal-blue);
+            background: white;
+            border: 1px solid #e2e8f0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--royal-blue);
+            color: white;
+            border-color: var(--royal-blue);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 8px;
+            height: 2px;
+            background-color: var(--royal-blue);
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                flex-direction: column-reverse;
+                padding: 2rem 1rem;
+            }
+            .slide > div {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Corporativo -->
+    <header class="bg-white border-b border-gray-100 py-6 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" width="200">
+            </div>
+            
+            <div class="flex gap-10 mt-6 md:mt-0">
+                <div class="flex flex-col items-end">
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mb-1">Ventas & Soporte</span>
+                    <div class="flex gap-6">
+                        <a href="https://wa.me/5537089053" class="flex items-center gap-2 text-sm font-medium hover:text-[#002366] transition-colors">
+                            <i class="fab fa-whatsapp text-green-600"></i> 5537089053
+                        </a>
+                        <a href="https://wa.me/5660680171" class="flex items-center gap-2 text-sm font-medium hover:text-[#002366] transition-colors">
+                            <i class="fas fa-phone-alt"></i> 5660680171
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-24 px-4">
+        <div class="container mx-auto">
+            <!-- Título de Sección -->
+            <div class="mb-12 text-center">
+                <h2 class="text-[12px] uppercase tracking-[0.4em] font-bold text-gray-400 mb-4">Portafolio de Equipamiento</h2>
+                <h1 class="text-4xl md:text-5xl font-bold text-[#002366] serif-title">CATÁLOGO</h1>
+            </div>
+
+            <!-- Slider Principal -->
+            <div class="slider-container">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    
+                    <!-- Producto 1 -->
+                    <div class="slide">
+                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                            <div class="space-y-8">
+                                <div class="w-12 h-1 bg-[#002366]"></div>
+                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Control de Acceso <br>Estándar 1 Puerta</h3>
+                                <p class="text-gray-500 leading-relaxed max-w-md">Solución integral de cobro automatizado mediante monedero electrónico, optimizando la recaudación y el control de flujo.</p>
+                                <ul class="feature-list text-gray-600">
+                                    <li>Validación multi-moneda de alta precisión</li>
+                                    <li>Facíl configuración para cambios de tarifas y tiempo de apertura</li>
+                                    <li>Acceso técnico restringido con chapa bancaria</li>
+                                    <li>Arquitectura compacta para optimización de espacio</li>
+                                </ul>
+                            </div>
+                            <div class="product-image-container">
+                                <img src="img (5).png" alt="Control de Acceso WC" class="max-h-[400px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="slide">
+                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                            <div class="space-y-8">
+                                <div class="w-12 h-1 bg-[#002366]"></div>
+                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Control de Acceso <br>Dual 2 Puertas</h3>
+                                <p class="text-gray-500 leading-relaxed max-w-md">Sistema de gestión compartida diseñado para administrar dos accesos independientes con una única unidad de control.</p>
+                                <ul class="feature-list text-gray-600">
+                                    <li>Validación multi-moneda de alta precisión</li>
+                                    <li>Botones de selección del servicio deseado</li>
+                                    <li>Facíl configuración para cambios de tarifas y tiempo de apertura</li>
+                                    <li>Arquitectura compacta para optimización de espacio</li>
+                                </ul>
+                            </div>
+                            <div class="product-image-container">
+                                <img src="img (6).png" alt="Módulo Dual Pro" class="max-h-[400px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="slide">
+                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                            <div class="space-y-8">
+                                <div class="w-12 h-1 bg-[#002366]"></div>
+                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Control de Acceso <br>RFID 1 Puerta</h3>
+                                <p class="text-gray-500 leading-relaxed max-w-md">Versatilidad operativa que combina el ingreso por moneda con la gestión de tarjetas RFID para personal autorizado.</p>
+                                <ul class="feature-list text-gray-600">
+                                    <li>Ingreso administrativo mediante tarjetas RFID o PIN de seguridad</li>
+                                    <li>Validación multi-moneda de alta precisión</li>
+                                    <li>Modo de apertura moderno y versátil</li>
+                                    <li>Arquitectura compacta para optimización de espacio</li>
+                                </ul>
+                            </div>
+                            <div class="product-image-container">
+                                <img src="img (4).png" alt="Módulo con Teclado" class="max-h-[400px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="slide">
+                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                            <div class="space-y-8">
+                                <div class="w-12 h-1 bg-[#002366]"></div>
+                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Gabinete ETOR <br>Para Torniquetes</h3>
+                                <p class="text-gray-500 leading-relaxed max-w-md">Chasis de ingeniería con perfil ajustado a sistemas de acceso torniquete medio cuerpo o cuerpo completo.</p>
+                                <ul class="feature-list text-gray-600">
+                                    <li>Acabado profesional en pintura de polvo industrial</li>
+                                    <li>Instalación de sobreponer con anclaje oculto</li>
+                                    <li>Validación multi-moneda de alta precisión</li>
+                                    <li>Indicadores de estado operativo integrados</li>
+                                </ul>
+                            </div>
+                            <div class="product-image-container">
+                                <img src="img (1).png" alt="Gabinete Slim" class="max-h-[400px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="slide">
+                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                            <div class="space-y-8">
+                                <div class="w-12 h-1 bg-[#002366]"></div>
+                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Dispensador de <br>Papel Higiénico</h3>
+                                <p class="text-gray-500 leading-relaxed max-w-md">Dispositivo de vending automatizado para insumos, diseñado para reducir el desperdicio y maximizar la rentabilidad.</p>
+                                <ul class="feature-list text-gray-600">
+                                    <li>Mecanismo de despacho preciso para rollo 600mts</li>
+                                    <li>3 Tipos de configuración, libre, cuota o apertura desde control de acceso</li>
+                                    <li>Frontal instructivo para autoservicio eficiente</li>
+                                    <li>Fabricación en acero reforzado anti-vandalismo</li>
+                                </ul>
+                            </div>
+                            <div class="product-image-container">
+                                <img src="img (3).png" alt="Dispensador" class="max-h-[400px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="slide">
+                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
+                            <div class="space-y-8">
+                                <div class="w-12 h-1 bg-[#002366]"></div>
+                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Reja de Seguridad <br>Tipo Industrial</h3>
+                                <p class="text-gray-500 leading-relaxed max-w-md">Protección estructural de alta resistencia para equipos expuestos en áreas públicas o de alto riesgo.</p>
+                                <ul class="feature-list text-gray-600">
+                                    <li>Fabricación en acero reforzado anti-vandalismo</li>
+                                    <li>Acceso frontal amplio para mantenimiento</li>
+                                    <li>Ventilación técnica para disipación de calor</li>
+                                    <li>Arquitectura compacta para optimización de espacio</li>
+                                </ul>
+                            </div>
+                            <div class="product-image-container">
+                                <img src="img (2).png" alt="Protector Industrial" class="max-h-[400px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Navegación Lateral -->
+                <div class="absolute inset-y-0 left-4 flex items-center z-10">
+                    <button onclick="manualMove(-1)" class="btn-nav shadow-sm"><i class="fas fa-chevron-left"></i></button>
+                </div>
+                <div class="absolute inset-y-0 right-4 flex items-center z-10">
+                    <button onclick="manualMove(1)" class="btn-nav shadow-sm"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Indicadores Inferiores -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3" id="dotsContainer">
+                    <div class="dot dot-active" onclick="manualGoTo(0)"></div>
+                    <div class="dot" onclick="manualGoTo(1)"></div>
+                    <div class="dot" onclick="manualGoTo(2)"></div>
+                    <div class="dot" onclick="manualGoTo(3)"></div>
+                    <div class="dot" onclick="manualGoTo(4)"></div>
+                    <div class="dot" onclick="manualGoTo(5)"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+                <div>
+                    <h2 class="text-xl font-bold text-[#002366] mb-2">SISECAB</h2>
+                    <p class="text-sm text-gray-400 font-medium">Excelencia en Sistemas de Automatización</p>
+                </div>
+                
+                <div class="text-xs text-gray-400 flex flex-col items-center md:items-end gap-4 uppercase tracking-[0.2em] font-semibold">
+                    <p>&copy; 2026 SISECAB MÉXICO. Todos los derechos reservados.</p>
+                    <div class="flex gap-10">
+                        <a href="#" class="hover:text-[#002366] transition-colors">Términos</a>
+                        <a href="#" class="hover:text-[#002366] transition-colors">Soporte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const wrapper = document.getElementById('sliderWrapper');
+        const dots = document.getElementById('dotsContainer').children;
+        const autoPlayInterval = 8000;
+        let autoPlayTimer;
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayTimer = setInterval(() => {
+                moveSlide(1);
+            }, autoPlayInterval);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+        }
+
+        function updateSlider() {
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            Array.from(dots).forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('dot-active');
+                } else {
+                    dot.classList.remove('dot-active');
+                }
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function manualMove(direction) {
+            moveSlide(direction);
+            startAutoPlay();
+        }
+
+        function manualGoTo(index) {
+            currentSlide = index;
+            updateSlider();
+            startAutoPlay();
+        }
+
+        // Eventos táctiles
+        let touchstartX = 0;
+        let touchendX = 0;
+        const slider = document.querySelector('.slider-container');
+        
+        slider.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+            stopAutoPlay();
+        });
+
+        slider.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchendX < touchstartX - 40) moveSlide(1);
+            if (touchendX > touchstartX + 40) moveSlide(-1);
+            startAutoPlay();
+        });
+
+        window.onload = startAutoPlay;
+        slider.addEventListener('mouseenter', stopAutoPlay);
+        slider.addEventListener('mouseleave', startAutoPlay);
+    </script>
+</body>
+</html>
