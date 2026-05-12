@@ -1,392 +1,542 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html class="no-js" lang="zxx">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISECAB | Soluciones Profesionales de Control</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Sistemas Autónomos Integrales ECAB</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+
+      <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
         
         :root {
-            --royal-blue: #002366; /* Azul Rey Serio */
+            --royal-blue: #002366;
             --slate-gray: #334155;
             --light-bg: #f8fafc;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--slate-gray);
-            overflow-x: hidden;
+        .map-container {
+            filter: grayscale(1) invert(1) opacity(0.8);
+            transition: filter 0.5s ease;
+        }
+        .map-container:hover {
+            filter: grayscale(0.2) invert(0) opacity(1);
         }
 
-        .serif-title {
-            font-family: 'Playfair Display', serif;
+        .hero-gradient {
+            background: linear-gradient(135deg, #002366 0%, #001540 100%);
         }
+      </style>
 
-        .slider-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 4px;
-            box-shadow: 0 10px 40px -15px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .slide {
-            min-width: 100%;
-            padding: 4rem 3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .product-image-container {
-            background-color: #f1f5f9;
-            border-radius: 2px;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.5s ease;
-        }
-
-        .slide:hover .product-image-container {
-            transform: scale(1.02);
-        }
-
-        .dot {
-            height: 4px;
-            width: 24px;
-            background-color: #e2e8f0;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .dot-active {
-            background-color: var(--royal-blue);
-            width: 48px;
-        }
-
-        .btn-nav {
-            color: var(--royal-blue);
-            background: white;
-            border: 1px solid #e2e8f0;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .btn-nav:hover {
-            background-color: var(--royal-blue);
-            color: white;
-            border-color: var(--royal-blue);
-        }
-
-        .feature-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-        }
-
-        .feature-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.6rem;
-            width: 8px;
-            height: 2px;
-            background-color: var(--royal-blue);
-        }
-
-        @media (max-width: 768px) {
-            .slide {
-                flex-direction: column-reverse;
-                padding: 2rem 1rem;
-            }
-            .slide > div {
-                width: 100% !important;
-            }
-        }
-    </style>
 </head>
-<body>
 
-    <!-- Header Corporativo -->
-    <header class="bg-white border-b border-gray-100 py-6 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="Logo" width="200">
+<body id="body" class="tv-magic-cursor">
+
+   <!-- preloader -->
+   <div id="preloader">
+      <div class="preloader">
+         <span></span>
+         <span></span>
+      </div>
+   </div>
+   <!-- preloader end  -->
+
+   <div id="magic-cursor">
+      <div id="ball"></div>
+   </div>
+
+   <!-- back-to-top-start  -->
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+   </button>
+   <!-- back-to-top-end  -->
+
+   <!-- tv-offcanvus-area-start -->
+   <div class="tv-offcanvas-area">
+      <div class="itoffcanvas">
+         <div class="itoffcanvas__close-btn">
+            <button class="close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="itoffcanvas__logo">
+            <a href="index.html">
+               <img src="assets/img/logo/logo-white2.png" alt="">
+            </a>
+         </div>
+         <div class="itoffcanvas__text">
+            <p>Automatiza tus ingresos con tecnología de acceso inteligente, obta por seguridad, transparencia y eficiencia en un solo sistema.</p>
+         </div>
+         <div class="tv-menu-mobile d-xl-none"></div>
+         <div class="itoffcanvas__info">
+            <h3 class="offcanva-title">Contáctanos</h3>
+            <div class="tv-info-wrapper mb-20 d-flex align-items-center">
+               <div class="itoffcanvas__info-icon">
+                  <a href="#"><i class="fal fa-envelope"></i></a>
+               </div>
+               <div class="itoffcanvas__info-address">
+                  <span>Email</span>
+                  <a href="maito:accesosecab@gmail.com">accesosecab@gmail.com</a>
+               </div>
             </div>
-            
-            <div class="flex gap-10 mt-6 md:mt-0">
-                <div class="flex flex-col items-end">
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mb-1">Ventas & Soporte</span>
-                    <div class="flex gap-6">
-                        <a href="https://wa.me/5537089053" class="flex items-center gap-2 text-sm font-medium hover:text-[#002366] transition-colors">
-                            <i class="fab fa-whatsapp text-green-600"></i> 5537089053
+            <div class="tv-info-wrapper mb-20 d-flex align-items-center">
+               <div class="itoffcanvas__info-icon">
+                  <a href="#"><i class="fal fa-phone-alt"></i></a>
+               </div>
+               <div class="itoffcanvas__info-address">
+                  <span>Contacto</span>
+                  <a href="https://api.whatsapp.com/send?phone=5537089053">(55) 3708 9053</a>
+                  <a href="https://api.whatsapp.com/send?phone=5660680171">(56) 6068 0171</a>
+               </div>
+            </div>
+            <div class="tv-info-wrapper mb-20 d-flex align-items-center">
+               <div class="itoffcanvas__info-icon">
+                  <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+               </div>
+               <div class="itoffcanvas__info-address">
+                  <span>Ubicación</span>
+                  <a href="https://www.google.com/maps/@19.3103352,-98.924991,15.46z" target="_blank">Ixtapaluca, Estado de México </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+   <!-- tv-offcanvus-area-end -->
+
+   <header class="tv-header-height  ">
+    
+      <!-- header-area-start -->
+      <div id="header-sticky" class="tv-header-area header-style-3 tv-header-transparent  tv-header-ptb p-relative">
+         
+         <div class="container container-1750 ">
+            <div class="p-relative">
+               <div class="row align-items-center">
+                  <div class="col-xxl-2 col-xl-2 col-6">
+                     <div class="tv-header-logo">
+                        <a href="index.html"><img src="assets/img/logo/logo-white2.png" alt=""></a>
+                     </div>
+                  </div>
+                  <div class=" col-xxl-7 col-xl-7 d-none d-xl-block text-center">
+                     <div class="tv-header-menu tv-header-dropdown">
+                        <nav class="tv-menu-content">
+                           <ul>
+                              <li>
+                                 <a href="index.html"><!----></a>
+                              </li>
+                              <li>
+                                 <a href="service.html"><!----></a>
+                              </li>
+                              <li>
+                                 <a href="service.html"><!----></a>
+                              </li>
+                              <li>
+                                 <a href="about.html"><!----></a>
+                              </li>
+                              <li>
+                                 <a href="about.html"><!----></a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+                  <div class="col-xxl-3 col-xl-3 col-6">
+                     <div class="tv-header-right-action d-flex justify-content-end align-items-center">
+                        <a href="catalogo.html"  class="tv-btn-primary p-relative d-none d-xxl-block">
+                           <span class="btn-wrap">
+                              <span class="btn-text1">Tienda en Línea</span>
+                              <span class="btn-text2">Tienda en Línea</span>
+                           </span>
                         </a>
-                        <a href="https://wa.me/5660680171" class="flex items-center gap-2 text-sm font-medium hover:text-[#002366] transition-colors">
-                            <i class="fas fa-phone-alt"></i> 5660680171
+                        <div class="tv-header-bar">
+                           <button class="tv-menu-bar">
+                              <span>
+                                 <i class="fa-solid fa-bars-staggered"></i>
+                              </span>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- header-area-end -->
+
+   </header>
+
+   <main>
+
+       <!-- Hero-area-start -->
+       <div class="tv-hero-area tv-hero-two pb-130 pt-130 p-relative" style="background-image: url(assets/img/hero/hero-bg-2.png);">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tv-hero-content">
+                     <h6 class="tv-hero-subtitle tv-spltv-text tv-spltv-in-right">Control de Acceso Total</h6>
+                     <h2 class="tv-hero-title tv-spltv-text tv-spltv-in-right">Seguridad y Gestión de Cuotas en Tiempo Real</h2>
+                     <p  class="tv-spltv-text tv-spltv-in-right">Diseñamos y fabricamos sistemas autónomos integrales con tecnología biométrica y de monedas para optimizar el flujo de personas en sus instalaciones.</p>
+                     <div class="tv-hero-btn-wrap d-flex align-items-center">
+                        <a href="https://api.whatsapp.com/send?phone=5660680171"  class="tv-btn-primary p-relative">
+                           <span class="btn-wrap">
+                              <span class="btn-text1">Cotizar mi proyecto</span>
+                              <span class="btn-text2">Cotizar mi proyecto</span>
+                           </span>
                         </a>
-                    </div>
-                </div>
+                        <div class="tv-video-icon">
+                           <a href="https://www.youtube.com/@sisecab" class="popup-video ripple-white">
+                              <span>
+                                 <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.9005 10.6854C21.2395 11.4541 21.2395 13.3857 19.9005 14.1544L3.23761 23.7201C1.90428 24.4856 0.241875 23.523 0.241875 21.9856L0.241875 2.85419C0.241875 1.31677 1.90428 0.354247 3.23761 1.11968L19.9005 10.6854Z" fill="#fff"></path>
+                                  </svg>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 order-1  wow img-anim-left" data-wow-duration="1.5s" data-wow-delay="0.1">
+                  <div class="tv-hero-banner-thumbnail mr-30">
+                     <img src="assets/img/hero/hero-thumb-2.jpg" alt="">
+                     <div class="experience-wrapper">
+                        <div class="experience-content">
+                           <h2>15+</h2>
+                           <p>Años de <span>Experiencia</span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+             
             </div>
-        </div>
-    </header>
+         </div>
+       </div>
+      <!-- Hero-area-end -->
 
-    <main class="py-16 md:py-24 px-4">
-        <div class="container mx-auto">
-            <!-- Título de Sección -->
-            <div class="mb-12 text-center">
-                <h2 class="text-[12px] uppercase tracking-[0.4em] font-bold text-gray-400 mb-4">Portafolio de Equipamiento</h2>
-                <h1 class="text-4xl md:text-5xl font-bold text-[#002366] serif-title">CATÁLOGO</h1>
-            </div>
-
-            <!-- Slider Principal -->
-            <div class="slider-container">
-                <div class="slider-wrapper" id="sliderWrapper">
-                    
-                    <!-- Producto 1 -->
-                    <div class="slide">
-                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
-                            <div class="space-y-8">
-                                <div class="w-12 h-1 bg-[#002366]"></div>
-                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Control de Acceso <br>Estándar 1 Puerta</h3>
-                                <p class="text-gray-500 leading-relaxed max-w-md">Solución integral de cobro automatizado mediante monedero electrónico, optimizando la recaudación y el control de flujo.</p>
-                                <ul class="feature-list text-gray-600">
-                                    <li>Validación multi-moneda de alta precisión</li>
-                                    <li>Facíl configuración para cambios de tarifas y tiempo de apertura</li>
-                                    <li>Acceso técnico restringido con chapa bancaria</li>
-                                    <li>Arquitectura compacta para optimización de espacio</li>
-                                </ul>
-                            </div>
-                            <div class="product-image-container">
-                                <img src="img (5).png" alt="Control de Acceso WC" class="max-h-[400px] object-contain">
-                            </div>
+        <!-- about area start -->
+       <div class="tv-about-area-3 pb-130 pt-130">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-6 col-xl-6 col-lg-6">
+                  <div class="tv-about-left d-flex img-anim-left">
+                     <div>
+                        <img class="img1" src="assets/img/about/about-3-1.png" alt="about-img">
+                     </div>
+                     <div>
+                        <div class="experience-area">
+                           <h2><span>+15</span>Años</h2>
+                           <h6>Experiencia en IT Industrial</h6>
                         </div>
-                    </div>
-
-                    <!-- Producto 2 -->
-                    <div class="slide">
-                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
-                            <div class="space-y-8">
-                                <div class="w-12 h-1 bg-[#002366]"></div>
-                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Control de Acceso <br>Dual 2 Puertas</h3>
-                                <p class="text-gray-500 leading-relaxed max-w-md">Sistema de gestión compartida diseñado para administrar dos accesos independientes con una única unidad de control.</p>
-                                <ul class="feature-list text-gray-600">
-                                    <li>Validación multi-moneda de alta precisión</li>
-                                    <li>Botones de selección del servicio deseado</li>
-                                    <li>Facíl configuración para cambios de tarifas y tiempo de apertura</li>
-                                    <li>Arquitectura compacta para optimización de espacio</li>
-                                </ul>
-                            </div>
-                            <div class="product-image-container">
-                                <img src="img (6).png" alt="Módulo Dual Pro" class="max-h-[400px] object-contain">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Producto 3 -->
-                    <div class="slide">
-                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
-                            <div class="space-y-8">
-                                <div class="w-12 h-1 bg-[#002366]"></div>
-                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Control de Acceso <br>RFID 1 Puerta</h3>
-                                <p class="text-gray-500 leading-relaxed max-w-md">Versatilidad operativa que combina el ingreso por moneda con la gestión de tarjetas RFID para personal autorizado.</p>
-                                <ul class="feature-list text-gray-600">
-                                    <li>Ingreso administrativo mediante tarjetas RFID o PIN de seguridad</li>
-                                    <li>Validación multi-moneda de alta precisión</li>
-                                    <li>Modo de apertura moderno y versátil</li>
-                                    <li>Arquitectura compacta para optimización de espacio</li>
-                                </ul>
-                            </div>
-                            <div class="product-image-container">
-                                <img src="img (4).png" alt="Módulo con Teclado" class="max-h-[400px] object-contain">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Producto 4 -->
-                    <div class="slide">
-                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
-                            <div class="space-y-8">
-                                <div class="w-12 h-1 bg-[#002366]"></div>
-                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Gabinete ETOR <br>Para Torniquetes</h3>
-                                <p class="text-gray-500 leading-relaxed max-w-md">Chasis de ingeniería con perfil ajustado a sistemas de acceso torniquete medio cuerpo o cuerpo completo.</p>
-                                <ul class="feature-list text-gray-600">
-                                    <li>Acabado profesional en pintura de polvo industrial</li>
-                                    <li>Instalación de sobreponer con anclaje oculto</li>
-                                    <li>Validación multi-moneda de alta precisión</li>
-                                    <li>Indicadores de estado operativo integrados</li>
-                                </ul>
-                            </div>
-                            <div class="product-image-container">
-                                <img src="img (1).png" alt="Gabinete Slim" class="max-h-[400px] object-contain">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Producto 5 -->
-                    <div class="slide">
-                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
-                            <div class="space-y-8">
-                                <div class="w-12 h-1 bg-[#002366]"></div>
-                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Dispensador de <br>Papel Higiénico</h3>
-                                <p class="text-gray-500 leading-relaxed max-w-md">Dispositivo de vending automatizado para insumos, diseñado para reducir el desperdicio y maximizar la rentabilidad.</p>
-                                <ul class="feature-list text-gray-600">
-                                    <li>Mecanismo de despacho preciso para rollo 600mts</li>
-                                    <li>3 Tipos de configuración, libre, cuota o apertura desde control de acceso</li>
-                                    <li>Frontal instructivo para autoservicio eficiente</li>
-                                    <li>Fabricación en acero reforzado anti-vandalismo</li>
-                                </ul>
-                            </div>
-                            <div class="product-image-container">
-                                <img src="img (3).png" alt="Dispensador" class="max-h-[400px] object-contain">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Producto 6 -->
-                    <div class="slide">
-                        <div class="grid md:grid-cols-2 gap-16 items-center w-full">
-                            <div class="space-y-8">
-                                <div class="w-12 h-1 bg-[#002366]"></div>
-                                <h3 class="text-4xl font-semibold text-[#002366] leading-snug">Reja de Seguridad <br>Tipo Industrial</h3>
-                                <p class="text-gray-500 leading-relaxed max-w-md">Protección estructural de alta resistencia para equipos expuestos en áreas públicas o de alto riesgo.</p>
-                                <ul class="feature-list text-gray-600">
-                                    <li>Fabricación en acero reforzado anti-vandalismo</li>
-                                    <li>Acceso frontal amplio para mantenimiento</li>
-                                    <li>Ventilación técnica para disipación de calor</li>
-                                    <li>Arquitectura compacta para optimización de espacio</li>
-                                </ul>
-                            </div>
-                            <div class="product-image-container">
-                                <img src="img (2).png" alt="Protector Industrial" class="max-h-[400px] object-contain">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Navegación Lateral -->
-                <div class="absolute inset-y-0 left-4 flex items-center z-10">
-                    <button onclick="manualMove(-1)" class="btn-nav shadow-sm"><i class="fas fa-chevron-left"></i></button>
-                </div>
-                <div class="absolute inset-y-0 right-4 flex items-center z-10">
-                    <button onclick="manualMove(1)" class="btn-nav shadow-sm"><i class="fas fa-chevron-right"></i></button>
-                </div>
-
-                <!-- Indicadores Inferiores -->
-                <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3" id="dotsContainer">
-                    <div class="dot dot-active" onclick="manualGoTo(0)"></div>
-                    <div class="dot" onclick="manualGoTo(1)"></div>
-                    <div class="dot" onclick="manualGoTo(2)"></div>
-                    <div class="dot" onclick="manualGoTo(3)"></div>
-                    <div class="dot" onclick="manualGoTo(4)"></div>
-                    <div class="dot" onclick="manualGoTo(5)"></div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-white border-t border-gray-100 py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
-                <div>
-                    <h2 class="text-xl font-bold text-[#002366] mb-2">SISECAB</h2>
-                    <p class="text-sm text-gray-400 font-medium">Excelencia en Sistemas de Automatización</p>
-                </div>
+                        <img src="assets/img/about/about-3-2.png" alt="about-img">
+                     </div>
+                  </div>
                 
-                <div class="text-xs text-gray-400 flex flex-col items-center md:items-end gap-4 uppercase tracking-[0.2em] font-semibold">
-                    <p>&copy; 2026 SISECAB MÉXICO. Todos los derechos reservados.</p>
-                    <div class="flex gap-10">
-                        <a href="#" class="hover:text-[#002366] transition-colors">Términos</a>
-                        <a href="#" class="hover:text-[#002366] transition-colors">Soporte</a>
-                    </div>
-                </div>
+               </div>
+               <div class="co-xxl-6 col-xl-6 col-lg-6">
+                  <div class="tv-about-right">
+                     <div class="tv-service-left-area">
+                        <div class="tv-section-title-box mb-40">
+                           <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sabemos quienes somos y lo que necesitas</h4>
+                           <p>Nuestra tecnología combina la precisión de hardware de última generación con un potente software. Mientras los dispositivos físicos garantizan un acceso infalsificable, el sistema de gestión valida en segundos a cada usuario.</p>
+   
+                        </div>
+                        <div class="tv-about-list-item wow itfadeUp" data-wow-delay=".2s">
+                           <ul>
+                              <li>
+                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <g clip-path="url(#clip0_2893_1074)">
+                                 <path d="M26.2623 13.9317C26.2623 20.7414 20.7419 26.2618 13.9322 26.2618C7.12244 26.2618 1.60205 20.7414 1.60205 13.9317C1.60205 7.12195 7.12244 1.60156 13.9322 1.60156C20.7419 1.60156 26.2623 7.12195 26.2623 13.9317Z" stroke="black"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.81362 13.0307C8.34112 12.7152 7.70994 12.7869 7.31911 13.1999C6.92886 13.6123 6.89211 14.247 7.23336 14.7014L10.7334 19.3681C10.9445 19.6493 11.2712 19.8207 11.6229 19.8342C11.9741 19.847 12.313 19.7012 12.5446 19.4363L20.7113 10.103C21.1144 9.64274 21.0928 8.94916 20.6623 8.51399C20.2318 8.07882 19.5388 8.05082 19.0739 8.44866L11.5786 14.8735L8.81362 13.0307Z" fill="white"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9322 0.519531C6.52891 0.519531 0.519043 6.52939 0.519043 13.9327C0.519043 21.336 6.52891 27.3458 13.9322 27.3458C21.3355 27.3458 27.3453 21.336 27.3453 13.9327C27.3453 6.52939 21.3355 0.519531 13.9322 0.519531ZM13.9322 1.68557C20.6916 1.68557 26.1793 7.17329 26.1793 13.9327C26.1793 20.6921 20.6916 26.1798 13.9322 26.1798C7.1728 26.1798 1.68508 20.6921 1.68508 13.9327C1.68508 7.17329 7.1728 1.68557 13.9322 1.68557Z" fill="#2B4DFF"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.13726 12.5428C8.42792 12.0697 7.48118 12.177 6.89552 12.796C6.30927 13.4155 6.25501 14.3669 6.76659 15.0488L10.2666 19.7155C10.5833 20.1378 11.0733 20.3945 11.6007 20.4143C12.128 20.4341 12.6361 20.2148 12.9838 19.8181L21.1504 10.4848C21.7548 9.79355 21.7227 8.75347 21.0769 8.1013C20.4312 7.44855 19.3911 7.40595 18.6946 8.00329L11.5342 14.1406L9.13726 12.5428ZM8.49034 13.5135L11.2548 15.3568C11.4723 15.5015 11.7593 15.484 11.9583 15.3142L19.4535 8.88938C19.6857 8.68988 20.0328 8.70446 20.248 8.92204C20.4633 9.13904 20.4738 9.48613 20.2725 9.71654L12.1058 19.0499C11.9898 19.1817 11.8206 19.2552 11.6444 19.2482C11.4688 19.2418 11.3055 19.156 11.1999 19.0155L7.69993 14.3488C7.5296 14.1213 7.54767 13.8045 7.74308 13.598C7.93792 13.3915 8.2535 13.356 8.49034 13.5135Z" fill="#2B4DFF"/>
+                                 </g>
+                                 <defs>
+                                 <clipPath id="clip0_2893_1074">
+                                 <rect width="28" height="28" fill="white"/>
+                                 </clipPath>
+                                 </defs>
+                                 </svg>
+                                    Soluciones innovadoras
+                              </li>
+                              <li>
+                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <g clip-path="url(#clip0_2893_1074)">
+                                 <path d="M26.2623 13.9317C26.2623 20.7414 20.7419 26.2618 13.9322 26.2618C7.12244 26.2618 1.60205 20.7414 1.60205 13.9317C1.60205 7.12195 7.12244 1.60156 13.9322 1.60156C20.7419 1.60156 26.2623 7.12195 26.2623 13.9317Z" stroke="black"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.81362 13.0307C8.34112 12.7152 7.70994 12.7869 7.31911 13.1999C6.92886 13.6123 6.89211 14.247 7.23336 14.7014L10.7334 19.3681C10.9445 19.6493 11.2712 19.8207 11.6229 19.8342C11.9741 19.847 12.313 19.7012 12.5446 19.4363L20.7113 10.103C21.1144 9.64274 21.0928 8.94916 20.6623 8.51399C20.2318 8.07882 19.5388 8.05082 19.0739 8.44866L11.5786 14.8735L8.81362 13.0307Z" fill="white"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9322 0.519531C6.52891 0.519531 0.519043 6.52939 0.519043 13.9327C0.519043 21.336 6.52891 27.3458 13.9322 27.3458C21.3355 27.3458 27.3453 21.336 27.3453 13.9327C27.3453 6.52939 21.3355 0.519531 13.9322 0.519531ZM13.9322 1.68557C20.6916 1.68557 26.1793 7.17329 26.1793 13.9327C26.1793 20.6921 20.6916 26.1798 13.9322 26.1798C7.1728 26.1798 1.68508 20.6921 1.68508 13.9327C1.68508 7.17329 7.1728 1.68557 13.9322 1.68557Z" fill="#2B4DFF"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.13726 12.5428C8.42792 12.0697 7.48118 12.177 6.89552 12.796C6.30927 13.4155 6.25501 14.3669 6.76659 15.0488L10.2666 19.7155C10.5833 20.1378 11.0733 20.3945 11.6007 20.4143C12.128 20.4341 12.6361 20.2148 12.9838 19.8181L21.1504 10.4848C21.7548 9.79355 21.7227 8.75347 21.0769 8.1013C20.4312 7.44855 19.3911 7.40595 18.6946 8.00329L11.5342 14.1406L9.13726 12.5428ZM8.49034 13.5135L11.2548 15.3568C11.4723 15.5015 11.7593 15.484 11.9583 15.3142L19.4535 8.88938C19.6857 8.68988 20.0328 8.70446 20.248 8.92204C20.4633 9.13904 20.4738 9.48613 20.2725 9.71654L12.1058 19.0499C11.9898 19.1817 11.8206 19.2552 11.6444 19.2482C11.4688 19.2418 11.3055 19.156 11.1999 19.0155L7.69993 14.3488C7.5296 14.1213 7.54767 13.8045 7.74308 13.598C7.93792 13.3915 8.2535 13.356 8.49034 13.5135Z" fill="#2B4DFF"/>
+                                 </g>
+                                 <defs>
+                                 <clipPath id="clip0_2893_10742">
+                                 <rect width="28" height="28" fill="white"/>
+                                 </clipPath>
+                                 </defs>
+                                 </svg>
+                                 Interfaces amigables
+                              </li>
+                              <li>
+                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <g clip-path="url(#clip0_2893_1074)">
+                                 <path d="M26.2623 13.9317C26.2623 20.7414 20.7419 26.2618 13.9322 26.2618C7.12244 26.2618 1.60205 20.7414 1.60205 13.9317C1.60205 7.12195 7.12244 1.60156 13.9322 1.60156C20.7419 1.60156 26.2623 7.12195 26.2623 13.9317Z" stroke="black"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.81362 13.0307C8.34112 12.7152 7.70994 12.7869 7.31911 13.1999C6.92886 13.6123 6.89211 14.247 7.23336 14.7014L10.7334 19.3681C10.9445 19.6493 11.2712 19.8207 11.6229 19.8342C11.9741 19.847 12.313 19.7012 12.5446 19.4363L20.7113 10.103C21.1144 9.64274 21.0928 8.94916 20.6623 8.51399C20.2318 8.07882 19.5388 8.05082 19.0739 8.44866L11.5786 14.8735L8.81362 13.0307Z" fill="white"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9322 0.519531C6.52891 0.519531 0.519043 6.52939 0.519043 13.9327C0.519043 21.336 6.52891 27.3458 13.9322 27.3458C21.3355 27.3458 27.3453 21.336 27.3453 13.9327C27.3453 6.52939 21.3355 0.519531 13.9322 0.519531ZM13.9322 1.68557C20.6916 1.68557 26.1793 7.17329 26.1793 13.9327C26.1793 20.6921 20.6916 26.1798 13.9322 26.1798C7.1728 26.1798 1.68508 20.6921 1.68508 13.9327C1.68508 7.17329 7.1728 1.68557 13.9322 1.68557Z" fill="#2B4DFF"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.13726 12.5428C8.42792 12.0697 7.48118 12.177 6.89552 12.796C6.30927 13.4155 6.25501 14.3669 6.76659 15.0488L10.2666 19.7155C10.5833 20.1378 11.0733 20.3945 11.6007 20.4143C12.128 20.4341 12.6361 20.2148 12.9838 19.8181L21.1504 10.4848C21.7548 9.79355 21.7227 8.75347 21.0769 8.1013C20.4312 7.44855 19.3911 7.40595 18.6946 8.00329L11.5342 14.1406L9.13726 12.5428ZM8.49034 13.5135L11.2548 15.3568C11.4723 15.5015 11.7593 15.484 11.9583 15.3142L19.4535 8.88938C19.6857 8.68988 20.0328 8.70446 20.248 8.92204C20.4633 9.13904 20.4738 9.48613 20.2725 9.71654L12.1058 19.0499C11.9898 19.1817 11.8206 19.2552 11.6444 19.2482C11.4688 19.2418 11.3055 19.156 11.1999 19.0155L7.69993 14.3488C7.5296 14.1213 7.54767 13.8045 7.74308 13.598C7.93792 13.3915 8.2535 13.356 8.49034 13.5135Z" fill="#2B4DFF"/>
+                                 </g>
+                                 <defs>
+                                 <clipPath id="clip0_2893_10743">
+                                 <rect width="28" height="28" fill="white"/>
+                                 </clipPath>
+                                 </defs>
+                                 </svg>
+                                  Transacciones seguras
+                              </li>
+                              <li>
+                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <g clip-path="url(#clip0_2893_1074)">
+                                 <path d="M26.2623 13.9317C26.2623 20.7414 20.7419 26.2618 13.9322 26.2618C7.12244 26.2618 1.60205 20.7414 1.60205 13.9317C1.60205 7.12195 7.12244 1.60156 13.9322 1.60156C20.7419 1.60156 26.2623 7.12195 26.2623 13.9317Z" stroke="black"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.81362 13.0307C8.34112 12.7152 7.70994 12.7869 7.31911 13.1999C6.92886 13.6123 6.89211 14.247 7.23336 14.7014L10.7334 19.3681C10.9445 19.6493 11.2712 19.8207 11.6229 19.8342C11.9741 19.847 12.313 19.7012 12.5446 19.4363L20.7113 10.103C21.1144 9.64274 21.0928 8.94916 20.6623 8.51399C20.2318 8.07882 19.5388 8.05082 19.0739 8.44866L11.5786 14.8735L8.81362 13.0307Z" fill="white"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9322 0.519531C6.52891 0.519531 0.519043 6.52939 0.519043 13.9327C0.519043 21.336 6.52891 27.3458 13.9322 27.3458C21.3355 27.3458 27.3453 21.336 27.3453 13.9327C27.3453 6.52939 21.3355 0.519531 13.9322 0.519531ZM13.9322 1.68557C20.6916 1.68557 26.1793 7.17329 26.1793 13.9327C26.1793 20.6921 20.6916 26.1798 13.9322 26.1798C7.1728 26.1798 1.68508 20.6921 1.68508 13.9327C1.68508 7.17329 7.1728 1.68557 13.9322 1.68557Z" fill="#2B4DFF"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.13726 12.5428C8.42792 12.0697 7.48118 12.177 6.89552 12.796C6.30927 13.4155 6.25501 14.3669 6.76659 15.0488L10.2666 19.7155C10.5833 20.1378 11.0733 20.3945 11.6007 20.4143C12.128 20.4341 12.6361 20.2148 12.9838 19.8181L21.1504 10.4848C21.7548 9.79355 21.7227 8.75347 21.0769 8.1013C20.4312 7.44855 19.3911 7.40595 18.6946 8.00329L11.5342 14.1406L9.13726 12.5428ZM8.49034 13.5135L11.2548 15.3568C11.4723 15.5015 11.7593 15.484 11.9583 15.3142L19.4535 8.88938C19.6857 8.68988 20.0328 8.70446 20.248 8.92204C20.4633 9.13904 20.4738 9.48613 20.2725 9.71654L12.1058 19.0499C11.9898 19.1817 11.8206 19.2552 11.6444 19.2482C11.4688 19.2418 11.3055 19.156 11.1999 19.0155L7.69993 14.3488C7.5296 14.1213 7.54767 13.8045 7.74308 13.598C7.93792 13.3915 8.2535 13.356 8.49034 13.5135Z" fill="#2B4DFF"/>
+                                 </g>
+                                 <defs>
+                                 <clipPath id="clip0_2893_10744">
+                                 <rect width="28" height="28" fill="white"/>
+                                 </clipPath>
+                                 </defs>
+                                 </svg>
+                                  Sistemas modernos
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="about-btn-wrap d-flex align-items-center wow itfadeUp" data-wow-delay=".3s">
+                           <a href="https://api.whatsapp.com/send?phone=5660680171"  class="tv-btn-primary p-relative">
+                              <span class="btn-wrap">
+                                 <span class="btn-text1">WhatsApp</span>
+                                 <span class="btn-text2">WhatsApp</span>
+                              </span>
+                           </a>
+                           <div class="phone-contact-wrap">
+                              <i class="fa-solid fa-phone"></i>
+                              <div class="contact-content">
+                                 <p>¿Listo para automatizar tus accesos?</p>
+                                 <h4><a href="https://api.whatsapp.com/send?phone=5660680171">(56) 6068 0171</a></h4>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </footer>
+         </div>
+       </div>
+       <!-- about area end -->
 
-    <script>
-        let currentSlide = 0;
-        const totalSlides = 6;
-        const wrapper = document.getElementById('sliderWrapper');
-        const dots = document.getElementById('dotsContainer').children;
-        const autoPlayInterval = 8000;
-        let autoPlayTimer;
+   <!-- blog-area start -->
+   <div class="tv-blog-area tv-blog-area3 pt-130 pb-130">
+      <div class="container">
+         <div class="row">
+            <div class="col-xxl-6 col-xl-6">
+               <div class="tv-section-title-box ">
+                  <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Tenemos un gran valor que nos respalda</h4>
+                  <p>Optimizamos la rentabilidad y seguridad de sus servicios mediante tecnología en control de accesos.</p>
+               </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6">
+               <div class="single-blog-item3 mb-30 d-flex align-items-center wow itfadeUp" data-wow-delay=".2s">
+                  <div class="thumb">
+                     <img src="assets/img/blog/blog-3-1.jpg" alt="">
+                  </div>
+                  <div class="content">
+                     <h4><a href="blog-details.html">Ingeniería Propia</a></h4>
+                     <div class="meta">
+                        <span class="cat">Diseñamos y fabricamos cada componente bajo estrictos estándares de calidad industrial.</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xxl-6 col-xl-6">
+               <div class="single-blog-item3 mb-30 d-flex align-items-center wow itfadeUp" data-wow-delay=".2s">
+                  <div class="thumb">
+                     <img src="assets/img/blog/blog-3-2.jpg" alt="">
+                  </div>
+                  <div class="content">
+                     <h4><a href="blog-details.html">Garantía Total</a></h4>
+                     <div class="meta">
+                        <span class="cat">Respaldamos nuestros equipos con pólizas de mantenimiento y cobertura extendida.</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6">
+               <div class="single-blog-item3 mb-30 d-flex align-items-center wow itfadeUp" data-wow-delay=".2s">
+                  <div class="thumb">
+                     <img src="assets/img/blog/blog-3-3.jpg" alt="">
+                  </div>
+                  <div class="content">
+                     <h4><a href="blog-details.html">Soporte Personalizado</a></h4>
+                     <div class="meta">
+                        <span class="cat">Asistencia técnica especializada inmediata para garantizar la continuidad de su negocio.</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- blog-area emd -->
 
-        function startAutoPlay() {
-            stopAutoPlay();
-            autoPlayTimer = setInterval(() => {
-                moveSlide(1);
-            }, autoPlayInterval);
-        }
+   <!-- brand-area-start -->
+       <div class="tv-brand-area gray-bg pb-130">
+         <div class="container">
+            <div class="tv-brand-content pt-80">
+               <div class="row">
+                  <div class="col-12 text-center">
+                     <p>Servicios profesionales para conectar con negocios primer nivel.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="tv-brand-slider ">
+               <div class="swiper-container tv-brand-slider-active">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="tv-brand-single-item">
+                           <img src="assets/img/brand/brand-1-1.png" alt="">
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tv-brand-single-item">
+                           <img src="assets/img/brand/brand-1-6.png" alt="">
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tv-brand-single-item">
+                           <img src="assets/img/brand/brand-1-3.png" alt="">
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tv-brand-single-item">
+                           <img src="assets/img/brand/brand-1-4.png" alt="">
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tv-brand-single-item">
+                           <img src="assets/img/brand/brand-1-5.png" alt="">
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tv-brand-single-item">
+                           <img src="assets/img/brand/brand-1-2.png" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+       </div>
+      <!-- brand-area-end -->
 
-        function stopAutoPlay() {
-            if (autoPlayTimer) clearInterval(autoPlayTimer);
-        }
+   </main>
 
-        function updateSlider() {
-            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-            Array.from(dots).forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.add('dot-active');
-                } else {
-                    dot.classList.remove('dot-active');
-                }
-            });
-        }
+   <footer>
 
-        function moveSlide(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateSlider();
-        }
+      <!-- footer-area-start -->
+      <div class="tv-footer-wrap footer-wrap-3 footer-bg z-index-1 pt-130">
+         <div class="tv-footer-top">
+            <div class="container">
+               <div class="tv-footer-top-area">
+                  <div class="row align-items-center">
+                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                        <div class="tv-footer-top-left widget">
+                           <h1 class="tv-spltv-text tv-spltv-in-right">Listo para modernizar su acceso?</h1>
+                        </div>
+                     </div>
+                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 wow itfadeUp" data-wow-delay=".2s">
+                        <div class="tv-footer-top-right widget">
+                           <p>Especialistas en la fabricación de sistemas integrales con equipos robustos fabricados para uso rudo y continuo obteniendo la máxima rentabilidad de su negocio.</p>
+                           <a href="https://api.whatsapp.com/send?phone=5660680171"  class="tv-btn-primary mt-74 p-relative">
+                              <span class="btn-wrap">
+                                 <span class="btn-text1">Cotizar Mi Proyecto</span>
+                                 <span class="btn-text2">Cotizar Mi Proyecto</span>
+                              </span>
+                           </a>
+                           <ul>
+                              <li><a href="terminos.html">Terms & Conditions</a></li>
+                              <li><a href="privacidad.html">Privacy Policy</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="tv-copyright-area ">
+            <div class="container">
+               <div class="tv-copyright-border">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6">
+                        <div class="tv-copyright-left text-center text-lg-start">
+                           <p class="mb-0">Copyright © 2026 SISECAB. All rights reserved.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 text-end">
+                        <div class="tv-footer-widget-social style-2">
+                           <a href="https://api.whatsapp.com/send?phone=5660680171"><i class="fa-brands fa-whatsapp"></i></a>
+                           <a href="https://www.facebook.com/sistemasecab"><i class="fa-brands fa-facebook-f"></i></a>
+                           <a href="https://www.youtube.com/@sisecab"><i class="fa-brands fa-youtube"></i></a>
+                           <a href="https://www.tiktok.com/@sistemasecab"><i class="fa-brands fa-tiktok"></i></a>
+                           <a href="https://www.instagram.com/sistemasecab/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+              
+            </div>
 
-        function manualMove(direction) {
-            moveSlide(direction);
-            startAutoPlay();
-        }
+         </div>
+      </div>
+      <!-- footer-area-end -->
 
-        function manualGoTo(index) {
-            currentSlide = index;
-            updateSlider();
-            startAutoPlay();
-        }
+   </footer>
 
-        // Eventos táctiles
-        let touchstartX = 0;
-        let touchendX = 0;
-        const slider = document.querySelector('.slider-container');
-        
-        slider.addEventListener('touchstart', e => {
-            touchstartX = e.changedTouches[0].screenX;
-            stopAutoPlay();
-        });
+   
+ 
 
-        slider.addEventListener('touchend', e => {
-            touchendX = e.changedTouches[0].screenX;
-            if (touchendX < touchstartX - 40) moveSlide(1);
-            if (touchendX > touchstartX + 40) moveSlide(-1);
-            startAutoPlay();
-        });
+   <!-- JS here -->
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/slick.min.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/purecounter.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/range-slider.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/main-tv.js"></script>
+   <script src="assets/js/custom-gsap.js"></script>
+   <script src="assets/js/slider.js"></script>
+   <script src="assets/js/main.js"></script>
 
-        window.onload = startAutoPlay;
-        slider.addEventListener('mouseenter', stopAutoPlay);
-        slider.addEventListener('mouseleave', startAutoPlay);
-    </script>
+
 </body>
+
 </html>
